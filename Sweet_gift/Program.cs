@@ -10,44 +10,48 @@ namespace Sweet_gift
     {
         public static void Main(string[] args)
         {
-            Murshmallow murshmallow = new Murshmallow("Murshmallow", 4, 212.4,"vanillin");
-            Chocolate chocolate = new Chocolate("Chocolate", 110, 512.2,"cocoa");
-            Waffles waffles = new Waffles("Waffles set", 200, 413.6,"condenced milk");
-            Biscuits biscuits = new Biscuits("Cookie", 60, 320, "souffle");
-            Candy nuts = new Candy("Squerrel nuts", 11.2, 411, "nuts");
-            Candy gelatin = new Candy("Jolly beans", 3.6, 210, "jelly");
-            Candy lollipop = new Candy("Bim - bom", 4.1, 260, "caramel");
-            Candy candymilk = new Candy("Nesquik", 90.2, 263, "milk");
+            Murshmallow murshmallow = new Murshmallow("Murshmallow", 4, 212.4, "vanillin", "pink");
+            Chocolate chocolate = new Chocolate("Chocolate", 110, 512.2, "cocoa", 72);
+            Waffles waffles = new Waffles("Waffles set", 200, 413.6, "condenced milk", 2);
+            Biscuits biscuits = new Biscuits("Cookie", 60, 320, "souffle", "circle");
+            Candy nuts = new Candy("Squerrel nuts", 11.2, 411, "nuts", "paper", "yellow");
+            Candy gelatin = new Candy("Jolly beans", 3.6, 210, "jelly", "plastic", "red");
+            Candy lollipop = new Candy("Bim - bom", 4.1, 260, "caramel", "paper", "multicolored");
+            Candy candymilk = new Candy("Nesquik", 90.2, 263, "milk", "plastic", "red");
 
-            List<Sweet> Namesweet = new List<Sweet>();
+            List<Sweet> Present = new List<Sweet>();
             {
-                Namesweet.Add(murshmallow);
-                Namesweet.Add(chocolate);
-                Namesweet.Add(waffles);
-                Namesweet.Add(biscuits);
-                Namesweet.Add(nuts);
-                Namesweet.Add(gelatin);
-                Namesweet.Add(lollipop);
-                Namesweet.Add(candymilk);
-                
-                var sortedsweet = Namesweet.OrderBy(na => na.Name).ToList();
+                Present.Add(murshmallow);
+                Present.Add(chocolate);
+                Present.Add(waffles);
+                Present.Add(biscuits);
+                Present.Add(nuts);
+                Present.Add(gelatin);
+                Present.Add(lollipop);
+                Present.Add(candymilk);
 
-                Console.WriteLine("Assorted sweets: ");
+                var sum = Present.Sum(value => value.Weight);
+                Console.WriteLine("\nTotal weight present:" + sum);
 
-                foreach (Sweet n in Namesweet)
+                var sortedsweet = Present.OrderBy(value => value.Name).ToList();
+
+                Console.WriteLine("\nAssorted sweets: ");
+
+                foreach (Sweet n in sortedsweet)
                 {
-                    Console.WriteLine("Sweet name: {0}, Weight: {1}", n.Name, n.Weight);
+                    Console.WriteLine("\nSweet name: {0}, Weight: {1}", n.Name, n.Weight);
                 }
+
+                Sweet found = Present.Find(value => value.Name == "Chocolate");
+                              
+                Console.WriteLine("Result of search:\nSweet name: {0},\n Weight: {1},\n Calorie: {2} ", found.Name, found.Weight, found.Calorie);
+                                
             }
+            Console.ReadLine();
 
-            BoxSweets boox = new BoxSweets();
-            boox.Content = "murshmalow";
-            boox.Size = "small";
-            boox.Weight = 600;
-            boox.InfoBox();
-
-            Console.ReadLine();                
-        }
+           
+        }                                                         
     }
+}   
     
-}
+

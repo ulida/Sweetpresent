@@ -8,10 +8,12 @@ namespace Sweet_gift
 {
     public class Biscuits:Sweet
     {
-        public Biscuits(string _name, double _weight, double _calorie, string _topping) : base(_name, _weight, _calorie, _topping)
+        private string View { get; set; }
+        public Biscuits(string _name, double _weight, double _calorie, string _topping,string _view) : base(_name, _weight, _calorie, _topping)
         {
-            
-            
+            this.View = _view;
+            Console.WriteLine("Biscuit has the appearance : " + View);
+
         }
     }
 }

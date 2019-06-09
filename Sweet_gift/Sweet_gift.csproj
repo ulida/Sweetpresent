@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biscuits.cs" />
-    <Compile Include="BoxSweets.cs" />
     <Compile Include="Candy.cs" />
     <Compile Include="Chocolate.cs" />
     <Compile Include="Murshmallow.cs" />
