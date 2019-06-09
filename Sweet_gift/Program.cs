@@ -19,18 +19,25 @@ namespace Sweet_gift
             Candy lollipop = new Candy("Bim - bom", 4.1, 260, "caramel");
             Candy candymilk = new Candy("Nesquik", 90.2, 263, "milk");
 
-            List<Sweet> Name = new List<Sweet>();
+            List<Sweet> Namesweet = new List<Sweet>();
             {
-                Name.Add(murshmallow);
-                Name.Add(chocolate);
-                Name.Add(waffles);
-                Name.Add(biscuits);
-                Name.Add(nuts);
-                Name.Add(gelatin);
-                Name.Add(lollipop);
-                Name.Add(candymilk);
+                Namesweet.Add(murshmallow);
+                Namesweet.Add(chocolate);
+                Namesweet.Add(waffles);
+                Namesweet.Add(biscuits);
+                Namesweet.Add(nuts);
+                Namesweet.Add(gelatin);
+                Namesweet.Add(lollipop);
+                Namesweet.Add(candymilk);
             }
-            var sortedSweet = Name.OrderBy(x => x.Name);
+            var sortedsweet = Namesweet.OrderBy(na => na.Name);
+            
+            Console.WriteLine("Assorted sweets: ");
+
+            foreach (Sweet n in Namesweet)
+            {
+               Console.WriteLine("Sweet name: {0}, Weight: {1}",n.Name,n.Weight);
+            }
 
             Console.ReadLine();                
         
