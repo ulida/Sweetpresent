@@ -29,43 +29,24 @@ namespace Sweet_gift
                 Namesweet.Add(gelatin);
                 Namesweet.Add(lollipop);
                 Namesweet.Add(candymilk);
-            }
-            var sortedsweet = Namesweet.OrderBy(na => na.Name);
-            
-            Console.WriteLine("Assorted sweets: ");
+                
+                var sortedsweet = Namesweet.OrderBy(na => na.Name).ToList();
 
-            foreach (Sweet n in Namesweet)
-            {
-               Console.WriteLine("Sweet name: {0}, Weight: {1}",n.Name,n.Weight);
+                Console.WriteLine("Assorted sweets: ");
+
+                foreach (Sweet n in Namesweet)
+                {
+                    Console.WriteLine("Sweet name: {0}, Weight: {1}", n.Name, n.Weight);
+                }
             }
+
+            BoxSweets boox = new BoxSweets();
+            boox.Content = "murshmalow";
+            boox.Size = "small";
+            boox.Weight = 600;
+            boox.InfoBox();
 
             Console.ReadLine();                
-        }
-    }
-    public class Sweet
-    {
-        public string Name { get; set; }
-        public double Weight { get; set; }
-        public double Calorie { get; set; }
-        public string Topping { get; set; }
-
-        public Sweet(string _name, double _weight, double _calorie, string _topping)
-        {
-            this.Name = _name;
-            this.Weight = _weight;
-            this.Calorie = _calorie;
-            this.Topping = _topping;
-            InfoSweet();
-        }
-        
-        public void InfoSweet()
-        {
-            Console.WriteLine("");//Пустая строка, при выводе в консоль хорошо разделяет сладости. 
-            Console.WriteLine("Name sweet of present: " + Name);
-            Console.WriteLine($"Weight once sweet: {Weight} gramm");
-            Console.WriteLine("Calories in 100 grams: " + Calorie);
-            Console.WriteLine("Topping in candy is " + Topping);
-
         }
     }
     

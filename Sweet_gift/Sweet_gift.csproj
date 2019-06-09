@@ -44,12 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biscuits.cs" />
+    <Compile Include="BoxSweets.cs" />
     <Compile Include="Candy.cs" />
     <Compile Include="Chocolate.cs" />
-    <Compile Include="IEnumerator.cs" />
     <Compile Include="Murshmallow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sweet.cs" />
     <Compile Include="Waffles.cs" />
   </ItemGroup>
   <ItemGroup>
