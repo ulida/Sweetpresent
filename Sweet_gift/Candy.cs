@@ -8,11 +8,9 @@ namespace Sweet_gift
 {
     class Candy:Sweet
     {
-        public string Topping { get; set; }
-        public Candy(string _name, double _weight, double _calorie, string _topping) : base(_name, _weight, _calorie)
+        public Candy(string _name, double _weight, double _calorie, string _topping) : base(_name, _weight, _calorie,_topping)
         {
-            this.Topping = _topping;
-            Console.WriteLine("Topping in candy is  " + _topping);
+            
 
         }
     }
